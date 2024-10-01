@@ -13,12 +13,12 @@ phases:
       - echo "Construyendo la imagen Docker..."
       - docker build -t mi-aplicacion .
       - echo "Etiquetando la imagen Docker..."
-      - docker tag mi-aplicacion:latest 253490770873.dkr.ecr.us-east-2.amazonaws.com/mi-aplicacion:latest
+      - docker tag mi-aplicacion:latest 253490770873.dkr.ecr.us-east-2.amazonaws.com/nr-registry-test:latest
   post_build:
     commands:
       - echo "Fase de post-construcción iniciada en `date`"
       - echo "Empujando la imagen Docker al Amazon ECR..."
-      - docker push 253490770873.dkr.ecr.us-east-2.amazonaws.com/mi-aplicacion:latest
+      - docker push 253490770873.dkr.ecr.us-east-2.amazonaws.com/nr-registry-test:latest
       - echo "Imagen empujada exitosamente"
 artifacts:
   files:
